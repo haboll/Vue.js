@@ -22,7 +22,7 @@ const routes = [
     component: {
       init () {
         this.$router.replace({
-          path: decodeURIComponent(this.$route.query.dest || '/main'),
+          path: decodeURIComponent(this.$route.query.dest || '/'),
           force: true
         })
       },
@@ -31,11 +31,8 @@ const routes = [
   },
   {
     path: '/',
-    beforeEnter: (to, from, next) => {
-      next({path: '/main'})
-    }
+    redirect: '/main'
   },
-
   {
     path: '/login',
     component: (resolve) => {
@@ -47,11 +44,36 @@ const routes = [
     component: (resolve) => {
       require(['@/views/main/main'], resolve)
     },
+    children: [
+      { path: '/', redirect: '/main/home' },
+      {
+        path: '/main/home',
+        component: (resolve) => {
+          require(['@/views/home/home'], resolve)
+        }
+      },
+      {
+        path: '/main/product',
+        component: (resolve) => {
+          require(['@/views/home/home'], resolve)
+        }
+      },
+      {
+        path: '/main/case',
+        component: (resolve) => {
+          require(['@/views/home/home'], resolve)
+        }
+      },
+      {
+        path: '/main/about',
+        component: (resolve) => {
+          require(['@/views/home/home'], resolve)
+        }
+      }
+    ],
     beforeEnter: (to, from, next) => {
       let auth = true
-      console.log(2)
       if (!auth) {
-        console.log(1)
         next({path: '/login'})
       } else {
         next()
