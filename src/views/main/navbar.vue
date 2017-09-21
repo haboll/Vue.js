@@ -1,6 +1,8 @@
 <template>
   <div class="nav-bar">
-      <div class="nav-left"></div>
+      <div class="nav-left">
+        <img src="../../assets/images/logo_topbar.png" alt="logo.png" />
+      </div>
       <div class="nav-right">
           <ul>
               <li>
@@ -60,10 +62,6 @@
       eName: 'PRODUCTS',
       hasSubPath: true,
       list: [
-        {
-          listName: '',
-          href: '/main/product'
-        },
         {
           listName: '系统平台',
           eListName: 'SYSTEM',

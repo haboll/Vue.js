@@ -13,27 +13,29 @@
     margin-left: 3%;
     width: 11.875rem;
     height: 3.4375rem;
-    background-size: contain;
+    >img{
+      width: 100%;
+      height: 100%;
+    }
   }
-}
-
-.nav-bar .nav-right{
-  color: #FFF;
-  height: 5rem;
-  width: 70%;
-}
-.nav-bar .nav-right ul {
-  height: 100%;
-  display: flex;
-  flex-direction: row-reverse;
-}
-.nav-bar .nav-right ul li{
-  list-style: none;
-  height: 100%;
-  width: 20%;
-  max-width: 12.5rem;
-  min-width: 8rem;
-  font-size: 1.125rem;
+  .nav-right{
+    color: #FFF;
+    height: 5rem;
+    width: 70%;
+    ul {
+      height: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      li{
+        list-style: none;
+        height: 100%;
+        width: 20%;
+        max-width: 12.5rem;
+        min-width: 8rem;
+        font-size: 1.125rem;
+      }
+    }
+  }
 }
 
 .nav-bar .nav-right ul li a #system-entrance{

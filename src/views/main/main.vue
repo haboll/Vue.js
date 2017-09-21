@@ -1,18 +1,22 @@
 <template>
-  <div>
+  <div class="wrapper">
     <Navbar></Navbar>
-    <Sidebar></Sidebar>
-    <div>
+    <div class="sem-main">
      <router-view></router-view>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 <script>
 import Navbar from './navbar'
-import Sidebar from './sidebar'
+import Footer from './footer'
+
 export default {
   name: 'main',
-  components: { Navbar, Sidebar }
+  components: { Navbar, Footer }
 }
 </script>
+<style lang="scss" scoped>
+  @import "../../assets/css/baseStyle.scss";
+</style>
 
