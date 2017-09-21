@@ -56,7 +56,29 @@ const routes = [
         path: '/main/product',
         component: (resolve) => {
           require(['@/views/home/home'], resolve)
-        }
+        },
+        children:[
+          {
+            path: '/', redirect: '/main/product/system'},
+          {
+            path: '/main/product/system',
+            component: (resolve) => {
+              require(['@/views/home/home'], resolve)
+            }
+          },
+          {
+            path: '/main/product/hardware',
+            component: (resolve) => {
+              require(['@/views/home/home'], resolve)
+            }
+          },
+          {
+            path: '/main/product/solution',
+            component: (resolve) => {
+              require(['@/views/home/home'], resolve)
+            }
+          }
+        ]
       },
       {
         path: '/main/case',
