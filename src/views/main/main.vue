@@ -4,16 +4,16 @@
     <div class="sem-main">
      <router-view></router-view>
     </div>
-    <Footer></Footer>
+    <FooterBar></FooterBar>
   </div>
 </template>
 <script>
 import Navbar from './navbar'
-import Footer from './footer'
+import FooterBar from './footer'
 
 export default {
   name: 'main',
-  components: { Navbar, Footer }
+  components: { Navbar, FooterBar }
 }
 </script>
 <style lang="scss" scoped>

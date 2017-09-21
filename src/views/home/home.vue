@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Button content="this is a button" :thin="thin" :hasImg="hasImg" :imgSrc="imgSrc"></Button>
+   按钮：  <Button content="查询" :thin="thin" :hasImg="hasImg" v-on:onclick="console" :imgSrc="imgSrc"></Button>
   </div>
 </template>
 
@@ -15,6 +15,11 @@
         thin: false,
         hasImg: true,
         imgSrc: icon.batch
+      }
+    },
+    methods: {
+      console: () => {
+        console.log('父组件点击事件')
       }
     }
   }

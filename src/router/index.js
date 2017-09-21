@@ -57,7 +57,7 @@ const routes = [
         component: (resolve) => {
           require(['@/views/home/home'], resolve)
         },
-        children:[
+        children: [
           {
             path: '/', redirect: '/main/product/system'},
           {
