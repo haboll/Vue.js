@@ -1,25 +1,55 @@
 <template>
   <div>
-   按钮：  <Button content="查询" :thin="thin" :hasImg="hasImg" v-on:onclick="console" :imgSrc="imgSrc"></Button>
+    按钮：
+    <my-button content="查 询"
+               :thin="thin"
+               :hasImg="hasImg"
+               :imgSrc="imgSrc"
+               v-on:onclick="console('thin-img')"
+    >
+    </my-button>
+    <my-button content="查 询"
+               :hasImg="hasImg"
+               :imgSrc="imgSrc"
+               v-on:onclick="console('middle-img')">
+    </my-button>
+
+    <my-button content="查 询"
+               :thin="thin"
+               v-on:onclick="console('thin')"
+    >
+    </my-button>
+    <my-button content="查 询"
+               v-on:onclick="console('middle')"
+               >
+    </my-button>
+
+    <my-button content="查 询"
+               :fat="fat"
+               v-on:onclick="console('fat')"
+    >
+    </my-button>
+
   </div>
 </template>
 
   <script>
-  import Button from '@/components/button'
+  import '@/components/button'
   import icon from '@/assets/icons'
+  import './home.scss'
   export default {
     name: 'btn',
-    components: [Button],
     data: () => {
       return {
-        thin: false,
+        thin: true,
+        fat: true,
         hasImg: true,
         imgSrc: icon.batch
       }
     },
     methods: {
-      console: () => {
-        console.log('父组件点击事件')
+      console: (text) => {
+        console.log(text)
       }
     }
   }
