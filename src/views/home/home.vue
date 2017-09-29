@@ -1,40 +1,38 @@
 <template>
   <div>
-    按钮：
-    <my-button content="查 询"
-               :thin="thin"
-               :hasImg="hasImg"
-               :imgSrc="imgSrc"
-               v-on:onclick="console('thin-img')"
-    >
-    </my-button>
-    <my-button content="查 询"
-               :hasImg="hasImg"
-               :imgSrc="imgSrc"
-               v-on:onclick="console('middle-img')">
-    </my-button>
-
-    <my-button content="查 询"
-               :thin="thin"
-               v-on:onclick="console('thin')"
-    >
-    </my-button>
-    <my-button content="查 询"
-               v-on:onclick="console('middle')"
-               >
-    </my-button>
-
-    <my-button content="查 询"
-               :fat="fat"
-               v-on:onclick="console('fat')"
-    >
-    </my-button>
+    <div>
+      按钮：
+      <my-MyButton :thin="true"
+                 :hasImg="true"
+                 :imgSrc="imgSrc"
+                 @onclick="click('thin-img')"
+      >
+        {{$t('message.hello')}}
+      </my-MyButton>
+      <my-button
+                 :hasImg="hasImg"
+                 :imgSrc="imgSrc"
+                 @onclick="click('middle-img')">
+      </my-button>
+      <my-button :thin="true"
+                 @onclick="click('thin')"
+      >
+      </my-button>
+      <my-button @onclick="click('middle')"
+      >
+      </my-button>
+      <my-button :fat="fat"
+                 @onclick="click('fat')"
+      >
+      </my-button>
+    </div>
+   <div></div>
 
   </div>
 </template>
 
   <script>
-  import '@/components/button'
+  import MyButton from '@/components/button'
   import icon from '@/assets/icons'
   import './home.scss'
   export default {
@@ -47,10 +45,23 @@
         imgSrc: icon.batch
       }
     },
+    components: [MyButton],
     methods: {
-      console: (text) => {
-        console.log(text)
+      click: function () {
+        this.thin = !this.thin
       }
+    },
+    created: function () {
+      console.log('c')
+    },
+    mounted: function () {
+      console.log('m')
+    },
+    updated: function () {
+      console.log('u')
+    },
+    destroyed: function () {
+      console.log('d')
     }
   }
 </script>

@@ -16,13 +16,17 @@ export default {
     margin: 0;
     padding: 0;
   }
-  body{
-    height: auto;
+  html,body{
+    height: 100%;
+    width:  100%;
+  }
+  #app{
+    height: 100%;
     width:  100%;
     font-family:  Helvetica,Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
     color: #323968;
     font-size: 1rem;
-    min-width: 1000px;
+ /*   min-width: 1000px;*/
     word-break: break-all;
     word-wrap: break-word;
   }

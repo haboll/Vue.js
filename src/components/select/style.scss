@@ -1,0 +1,43 @@
+
+@import "../../styles/variables.scss";
+
+$select-width: 8rem;
+$select-height: 1.5rem;
+.sem-select{
+  width: $select-width;
+  height: $select-height;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: #FFF;
+  color: #000;
+  font-weight: normal;
+  font-size: $font-size-14;
+  display: flex;
+  .select-content{
+    width: 80%;
+    height: $select-height;
+    line-height: $select-height - 2*$border-radius;
+    padding: $border-radius;
+    box-sizing: border-box;
+    text-align: left;
+    border-right: 1px solid $border-color;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .select-img{
+    width: 20%;
+    height: $select-height;
+    position: relative;
+    >img{
+      width: .625rem;
+      height: .625rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -.3125rem 0 0 -.3125rem;
+    }
+  }
+}
+
+

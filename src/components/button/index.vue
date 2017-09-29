@@ -13,17 +13,13 @@ button组件
             v-bind:class="[{'has-img': hasImg, disabled: disabled, thin: thin, fat: fat}]"
     >
       <img class="btn-img" v-if="hasImg" v-bind:src="imgSrc" />
-      {{content}}
+      <slot>查询</slot>
     </button>
 </template>
 <script>
   import Vue from 'vue'
   import './style.scss'
   const propsVerify = {
-    content: {
-      type: String,
-      required: true
-    },
     disabled: {
       type: Boolean,
       default: false
