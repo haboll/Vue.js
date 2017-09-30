@@ -2,13 +2,13 @@
   <div>
     <div>
       按钮：
-      <my-MyButton :thin="true"
+      <my-button :thin="true"
                  :hasImg="true"
                  :imgSrc="imgSrc"
-                 @onclick="click('thin-img')"
+                 @onclick="click"
       >
         {{$t('message.hello')}}
-      </my-MyButton>
+      </my-button>
       <my-button
                  :hasImg="hasImg"
                  :imgSrc="imgSrc"
@@ -47,7 +47,8 @@
     },
     components: [MyButton],
     methods: {
-      click: function () {
+      click: function (msg) {
+        console.log(msg)
         this.thin = !this.thin
       }
     },

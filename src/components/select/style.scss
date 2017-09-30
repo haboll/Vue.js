@@ -11,7 +11,7 @@ $select-height: 1.5rem;
   background-color: #FFF;
   color: #000;
   font-weight: normal;
-  font-size: $font-size-14;
+  font-size: $font-size-12;
   display: flex;
   .select-content{
     width: 80%;
@@ -29,6 +29,8 @@ $select-height: 1.5rem;
     width: 20%;
     height: $select-height;
     position: relative;
+    -webkit-transition: transform .2s ease;
+    transition: transform .2s ease;
     >img{
       width: .625rem;
       height: .625rem;
@@ -36,7 +38,76 @@ $select-height: 1.5rem;
       top: 50%;
       left: 50%;
       margin: -.3125rem 0 0 -.3125rem;
+
     }
+  }
+  .select-drop-down{
+    background-color: #FFF;
+    position: absolute;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: $border-radius;
+    border-radius: $border-radius;
+    border: solid 1px $color-primary;
+    top: 100%;
+    width: 100%;
+    margin-top: .25rem;
+    z-index: 2;
+    .select-arrow {
+      $size: 4px;
+      position: absolute;
+      top: -($size + 1px);
+      border-bottom: solid $size $color-primary;
+      border-left: solid $size transparent;
+      border-right: solid $size transparent;
+
+      &:before {
+        content: '';
+        left: -$size;
+        position: absolute;
+        top: 1px;
+        border-bottom: solid $size #fff;
+        border-left: solid $size transparent;
+        border-right: solid $size transparent;
+      }
+      z-index: 2;
+      left: 4px;
+    }
+    .select-list {
+      max-height: 200px;
+      overflow: hidden;
+      overflow-y: auto;
+      position: relative;
+      margin: 2px 0;
+      .select-list-item {
+        padding: 6px 8px;
+        cursor: pointer;
+        &.active {
+          color: #fff;
+        }
+
+        &:hover {
+          background-color: #f1f1f1;
+        }
+
+        &.active {
+          background-color: $color-primary;
+        }
+      }
+
+      .empty {
+        padding: 6px 10px;
+        color: #ccc;
+      }
+    }
+  }
+  &.open {
+    .select-img {
+      -webkit-transform: rotate(180deg);
+      -ms-transform: translateY(180deg);
+      transform: translateY(180deg);
+    }
+
   }
 }
 

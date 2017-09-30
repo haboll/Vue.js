@@ -8,13 +8,10 @@ button组件
 @params:imgSrc img.src
 -->
 <template>
-    <button class="sem-btn"
-            v-on:click.stop.prevent="onclick"
-            v-bind:class="[{'has-img': hasImg, disabled: disabled, thin: thin, fat: fat}]"
-    >
-      <img class="btn-img" v-if="hasImg" v-bind:src="imgSrc" />
-      <slot>{{$t('message.search')}}</slot>
-    </button>
+  <input class="sem-input"
+         v-model="value"
+         v-bind:class="[{disabled: disabled, thin: thin, fat: fat}]"
+  />
 </template>
 <script>
   import Vue from 'vue'
@@ -24,27 +21,25 @@ button组件
       type: Boolean,
       default: false
     },
+    value: {
+      type: [String, Number],
+      require: true
+    },
     thin: {
       type: Boolean
     },
     fat: {
       type: Boolean
-    },
-    hasImg: {
-      type: Boolean
-    },
-    imgSrc: {
-      type: String
     }
   }
-  const Button = Vue.component('my-button', {
+  const Input = Vue.component('my-input', {
     props: propsVerify,
     methods: {
       onclick: function () {
-        this.$emit('onclick', 'value')
+        this.$emit('onclick')
       }
     }
   })
 
-  export default Button
+  export default Input
 </script>
