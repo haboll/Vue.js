@@ -6,7 +6,7 @@
       <div class="nav-right">
           <ul>
             <li>{{nav.manager}}</li>
-            <li>{{nav.loginOut}}</li>
+            <li @click.stop.prevent="onclick">{{nav.loginOut}}</li>
           </ul>
       </div>
   </div>
@@ -14,6 +14,12 @@
 <script>
   export default {
     name: 'navbar',
+    methods: {
+      onclick: function () {
+        console.log(1)
+        this.$router.push('/login')
+      }
+    },
     computed: {
       nav: function () {
         return {

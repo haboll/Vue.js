@@ -42,7 +42,7 @@ select组件
     components: [MyInput],
     methods: {
       onclick: function () {
-        this.$emit('onChange', {open: !this.setting.open})
+        this.$emit('onOpen', {open: !this.setting.open})
       },
       handleSelect: function (item) {
         let {value, multiple, editable, allowEmpty} = this

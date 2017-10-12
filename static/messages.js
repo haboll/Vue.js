@@ -9,6 +9,10 @@ export default {
     home: {
       'changhong': '长虹'
     },
+    nav: {
+      manager: '管理员',
+      loginOut: '退出'
+    },
     sidebar: {
       home: '概览',
       status: '电池当前状态',
@@ -24,14 +28,14 @@ export default {
       suser: '用户设置'
     }
   },
-  'en-Us':{
-    message:{
+  'en-Us': {
+    message: {
       hello: 'hello',
       search: 'search',
       manager: 'manager',
       loginOut: 'out'
     },
-    nav:{
+    nav: {
       manager: 'manager',
       loginOut: 'login out'
     },
@@ -39,7 +43,7 @@ export default {
       home: 'home',
       status: 'status',
       battery: 'battery',
-      mcp: 'MCP',
+      mcp: 'mcp',
       warn: 'warn',
       time: 'time',
       history: 'history',

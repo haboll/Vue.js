@@ -100,20 +100,22 @@
   ]
   export default {
     name: 'main',
-    data: () => {
-      return {
-        block: initBlocks
-      }
-    },
     components: { Navbar, SideBar },
     computed: {
+      block: function () {
+        initBlocks.map(item => {
+          item.Name = this.$t(`sidebar.${item.name}`)
+          item.list.map((i) => {
+            i.ListName = this.$t(`sidebar.${i.listName}`)
+          })
+        })
+        return initBlocks
+      },
       blocks: function () {
         let path = this.$route.path
         return this.block.map((item, index) => {
-          item.name = this.$t(`sidebar.${item.name}`)
           item.isLink = item.list.some((i) => {
             i.isLink = i.href === path
-            i.listName = this.$t(`sidebar.${i.listName}`)
             return i.href === path
           })
           return item
