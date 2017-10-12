@@ -5,7 +5,6 @@ import Formatter from './formatter'
 import Messages from './messages'
 import store from 'store'
 
-
 Vue.use(VueI18n)
 
 const locale = store.get('locale') ? store.get('locale') : 'zh-Cn'
