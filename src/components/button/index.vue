@@ -13,7 +13,7 @@ button组件
             v-bind:class="[{'has-img': hasImg, disabled: disabled, thin: thin, fat: fat}]"
     >
       <img class="btn-img" v-if="hasImg" v-bind:src="imgSrc" />
-      <slot>{{$t('message.search')}}</slot>
+      <slot></slot>
     </button>
 </template>
 <script>
@@ -41,10 +41,9 @@ button组件
     props: propsVerify,
     methods: {
       onclick: function () {
-        this.$emit('onclick', 'value')
+        this.$emit('onclick', this.value)
       }
     }
   })
-
   export default Button
 </script>

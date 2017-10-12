@@ -30,4 +30,14 @@ export default {
     word-break: break-all;
     word-wrap: break-word;
   }
+  ul{
+    list-style: none;
+  }
+  li{
+
+  }
+  a:visited, a:link, a:hover,a{
+    color: inherit;
+    text-decoration: none;
+  }
 </style>

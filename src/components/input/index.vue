@@ -1,11 +1,9 @@
 <!--
-button组件
-@params:content 按钮内容
+input组件
 @params:disabled 是否禁用
-@params:thin 小号button
-@params:fat 大号button
-@params:hasImg  是否包含额外元素img
-@params:imgSrc img.src
+@params:thin 小号input
+@params:fat 大号input
+@params:value 输入值
 -->
 <template>
   <input class="sem-input"

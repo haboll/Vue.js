@@ -3,6 +3,8 @@
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Login from './login'
+import Main from './main'
 
 Vue.use(VueRouter)
 
@@ -30,80 +32,10 @@ const routes = [
     }
   },
   {
-    path: '/',
-    redirect: '/main'
-  },
-  {
-    path: '/login',
-    component: (resolve) => {
-      require(['@/views/login/login'], resolve)
-    }
-  },
-  {
-    path: '/main',
-    component: (resolve) => {
-      require(['@/views/main/main'], resolve)
-    },
-    children: [
-      { path: '/', redirect: '/main/home' },
-      {
-        path: '/main/home',
-        component: (resolve) => {
-          require(['@/views/home/home'], resolve)
-        }
-      },
-      {
-        path: '/main/product',
-        component: (resolve) => {
-          require(['@/views/home/home'], resolve)
-        },
-        children: [
-          {
-            path: '/', redirect: '/main/product/system'},
-          {
-            path: '/main/product/system',
-            component: (resolve) => {
-              require(['@/views/home/home'], resolve)
-            }
-          },
-          {
-            path: '/main/product/hardware',
-            component: (resolve) => {
-              require(['@/views/home/home'], resolve)
-            }
-          },
-          {
-            path: '/main/product/solution',
-            component: (resolve) => {
-              require(['@/views/home/home'], resolve)
-            }
-          }
-        ]
-      },
-      {
-        path: '/main/case',
-        component: (resolve) => {
-          require(['@/views/home/home'], resolve)
-        }
-      },
-      {
-        path: '/main/about',
-        component: (resolve) => {
-          require(['@/views/home/home'], resolve)
-        }
-      }
-    ],
-    beforeEnter: (to, from, next) => {
-      let auth = true
-      if (!auth) {
-        next({path: '/login'})
-      } else {
-        next()
-      }
-    }
+    path: '/', redirect: '/main'
   }
 ]
-
+routes.push(Login, Main)
 const router = new VueRouter({
   routes: routes
 })

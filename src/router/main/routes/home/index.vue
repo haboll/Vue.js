@@ -22,7 +22,7 @@
       >
       </my-button>
       <my-button :fat="fat"
-                 @onclick="click('fat')"
+                 @onclick="click"
       >
       </my-button>
     </div>
@@ -49,7 +49,7 @@
     methods: {
       click: function (msg) {
         console.log(msg)
-        this.thin = !this.thin
+        this.value = 'sss'
       }
     },
     created: function () {

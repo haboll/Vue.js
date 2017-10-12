@@ -50,6 +50,7 @@ $select-height: 1.5rem;
     border-radius: $border-radius;
     border: solid 1px $color-primary;
     top: 100%;
+    left: 0;
     width: 100%;
     margin-top: .25rem;
     z-index: 2;
@@ -60,7 +61,6 @@ $select-height: 1.5rem;
       border-bottom: solid $size $color-primary;
       border-left: solid $size transparent;
       border-right: solid $size transparent;
-
       &:before {
         content: '';
         left: -$size;
@@ -85,16 +85,13 @@ $select-height: 1.5rem;
         &.active {
           color: #fff;
         }
-
         &:hover {
           background-color: #f1f1f1;
         }
-
         &.active {
           background-color: $color-primary;
         }
       }
-
       .empty {
         padding: 6px 10px;
         color: #ccc;

@@ -3,14 +3,26 @@
   height: 100%;
   .nav-bar{
     position: relative;
+    height: 5rem;
+    width: 100%;
   }
-  .sem-main{
+  .main{
     position: relative;
+    height: -webkit-calc(100% - 5rem);
+    height: -moz-calc(100% - 5rem);
+    height: calc(100% - 5rem);
     background-color: #FFF;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
-  .footer{
-    position: relative;
+    display: flex;
+    .sidebar{
+      flex: 0 0 20%;
+      min-width: 10rem;
+      max-width: 25rem;
+      height: 100%;
+      background-color: #333;
+      color: #fff;
+    }
+    .sem{
+      flex: 1;
+    }
   }
 }
