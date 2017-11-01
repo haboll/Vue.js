@@ -1,0 +1,24 @@
+html,body,p,h1,h2,h3,h4,h5,h6,ul,li{
+  margin: 0;
+  padding: 0;
+}
+html{
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}
+body{
+  font-family:  Helvetica,Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
+  color: #323968;
+  font-size: .875rem;
+  min-width: 800px;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+ul{
+  list-style-type: none;
+}
+a,a:visited,a:link,a:hover{
+  text-decoration: none;
+  color: transparent;
+}
