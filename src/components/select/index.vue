@@ -1,11 +1,5 @@
 <!--
 select组件
-@params:content 按钮内容
-@params:disabled 是否禁用
-@params:thin 小号button
-@params:fat 大号button
-@params:hasImg  是否包含额外元素img
-@params:imgSrc img.src
 -->
 <template>
     <div :class="{open: setting.open}"

@@ -4,7 +4,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Main from './main'
-
+import Resume from './resume'
 Vue.use(VueRouter)
 
 const routes = [
@@ -32,7 +32,7 @@ const routes = [
   },
   {path: '/', redirect: '/main'}
 ]
-routes.push(Main)
+routes.push(Main, Resume)
 const router = new VueRouter({
   routes: routes
 })

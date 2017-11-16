@@ -8,6 +8,8 @@ html{
   font-size: 16px;
 }
 body{
+  width: 100%;
+  height: 100%;
   font-family:  Helvetica,Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
   color: #323968;
   font-size: .875rem;
@@ -21,4 +23,9 @@ ul{
 a,a:visited,a:link,a:hover{
   text-decoration: none;
   color: transparent;
+}
+#app{
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
