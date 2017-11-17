@@ -4,7 +4,9 @@ export default {
       hello: '您好！',
       search: '查询',
       manager: '管理员',
-      loginOut: '退出'
+      loginOut: '退出',
+      cancel: '取消',
+      confirm: '确定'
     },
     home: {
       'changhong': '长虹'
@@ -33,7 +35,9 @@ export default {
       hello: 'hello',
       search: 'search',
       manager: 'manager',
-      loginOut: 'out'
+      loginOut: 'out',
+      cancel: '取消',
+      confirm: '确定'
     },
     nav: {
       manager: 'manager',
@@ -59,7 +63,9 @@ export default {
       hello: '妳好！',
       search: '搜尋',
       manager: '管理員',
-      loginOut: '登出'
+      loginOut: '登出',
+      cancel: '取消',
+      confirm: '确定'
     },
     nav: {
       manager: '管理員',

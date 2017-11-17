@@ -1,17 +1,22 @@
 <template>
-  <div class="wrapper">
-    <Navbar></Navbar>
-    <div class="main">
-      <side-bar :block="blocks"></side-bar>
-      <div class="sem">
-        <router-view></router-view>
+  <div class="modal-wrapper">
+    <alert></alert>
+    <div class="wrapper">
+      <Navbar></Navbar>
+      <div class="main">
+        <side-bar :block="blocks"></side-bar>
+        <div class="sem">
+          <router-view></router-view>
+        </div>
       </div>
     </div>
   </div>
+
 </template>
 <script>
   import Navbar from './navbar'
   import SideBar from './sidebar'
+  import Alert from '@/components/alert'
   import Icons from '@/assets/icons'
 
   const initBlocks = [
@@ -100,7 +105,7 @@
   ]
   export default {
     name: 'main',
-    components: { Navbar, SideBar },
+    components: {Navbar, SideBar, Alert},
     computed: {
       block: function () {
         initBlocks.map(item => {
