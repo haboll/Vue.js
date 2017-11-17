@@ -3,9 +3,8 @@
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from './login'
 import Main from './main'
-
+import Resume from './resume'
 Vue.use(VueRouter)
 
 const routes = [
@@ -31,11 +30,9 @@ const routes = [
       template: '<span></span>'
     }
   },
-  {
-    path: '/', redirect: '/main'
-  }
+  {path: '/', redirect: '/main'}
 ]
-routes.push(Login, Main)
+routes.push(Main, Resume)
 const router = new VueRouter({
   routes: routes
 })

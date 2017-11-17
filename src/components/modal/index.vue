@@ -1,14 +1,16 @@
 <template>
-  <div class="v-sem-modal">
-    <div class="sem-modal-body">
-      <div class="sem-modal-header">
+  <div class="v-sem-modal" :class="{show: show}">
+    <div class="sem-modal-body" :style="{width: width}">
+      <div class="sem-modal-header" v-if="!noHeader">
         {{headText}}
-        <img :src="closeIcon"/>
+        <img :src="closeIcon"
+             :click.stop.prevent="onCancel"/>
       </div>
-      <div class="sem-modal-content">{{content}}</div>
-      <div class="sem-modal-footer">
-        <my-button class="modal-button">{{text.cancel}}</my-button>
-        <my-button class="modal-button right">{{text.confirm}}</my-button>
+      <div class="sem-modal-content">
+        <slot name="content"></slot>
+      </div>
+      <div class="sem-modal-footer" v-if="!noFooter">
+        <slot name="footer"></slot>
       </div>
     </div>
   </div>
@@ -18,15 +20,22 @@
   import Vue from 'vue'
   import './style.scss'
   import Icon from '@/assets/icons'
-  import MyButton from '@/components/button'
   const propsVerify = {
+    width: {
+      type: [String],
+      required: true
+    },
     headText: {
       type: String,
       required: true
     },
-    content: {
-      type: String,
-      required: true
+    noHeader: {
+      type: [Boolean, String],
+      default: false
+    },
+    noFooter: {
+      type: [Boolean, String],
+      default: false
     }
   }
   const MyModal = Vue.component('my-modal', {
@@ -34,16 +43,13 @@
     props: propsVerify,
     data: () => {
       return {
-        closeIcon: Icon.batch
+        closeIcon: Icon.batch,
+        show: false
       }
     },
-    components: [MyButton],
-    computed: {
-      text: function () {
-        return {
-          confirm: this.$t(`message.confirm`),
-          cancel: this.$t(`message.cancel`)
-        }
+    methods: {
+      onCancel: function () {
+        this.$emit('onClose')
       }
     }
   })

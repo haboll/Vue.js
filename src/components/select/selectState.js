@@ -17,39 +17,40 @@ export default class SelectState {
       multiple: false,
       allowEmpty: false
     }
-    this.selects = {}
-    selects.map(s => {
-      this.selects[s[0]] = Object.assign({}, this.options, s[1])
-    })
+    selects = selects.map(i => [i[0], Object.assign({}, this.options, i[1])])
+    this.selects = new Map(selects)
   }
   getSelects () {
     return this.selects
   }
+  getSelectLength () {
+    let selectArr = [...this.selects.entries()]
+    return selectArr.length
+  }
   getSelect (key) {
-    return this.selects[key]
+    return this.selects.get(key)
   }
   editSelect (key, obj) {
-    let data = this.selects[key]
-    console.log(obj)
+    let data = this.getSelect(key)
     if (obj.open) {
       this.editAllSelect({open: false})
     }
     if (data) {
-      this.selects[key] = Object.assign({}, data, obj)
+      this.selects.set(key, Object.assign({}, data, obj))
     }
   }
   editSomeSelect (keys, objects) {
     keys.map((item, i) => {
       let data = this.getSelect(item)
       if (data) {
-        this.selects[item] = Object.assign({}, data, objects[i])
+        this.selects.set(item, Object.assign({}, data, objects[i]))
       }
     })
   }
   editAllSelect (obj) {
-    for (let i in this.selects) {
-      i = Object.assign({}, i, obj)
-    }
-    return this.selects
+    [...this.selects.entries()].map(i => this.selects.set(i[0], Object.assign({}, i[1], obj)))
+  }
+  subMap (map) {
+    this.selects = new Map([...this.selects.entries(), ...map.entries()])
   }
 }

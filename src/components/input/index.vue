@@ -6,38 +6,19 @@ input组件
 @params:value 输入值
 -->
 <template>
-  <input class="sem-input"
-         v-model="value"
-         v-bind:class="[{disabled: disabled, thin: thin, fat: fat}]"
-  />
+ <div class="sem-input">
+   <slot></slot>
+ </div>
 </template>
 <script>
   import Vue from 'vue'
   import './style.scss'
-  const propsVerify = {
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    value: {
-      type: [String, Number],
-      require: true
-    },
-    thin: {
-      type: Boolean
-    },
-    fat: {
-      type: Boolean
-    }
-  }
-  const Input = Vue.component('my-input', {
-    props: propsVerify,
-    methods: {
-      onclick: function () {
-        this.$emit('onclick')
-      }
-    }
-  })
 
+  export const Input = Vue.component('my-input', {
+    template: ' <div class="sem-input"><slot></slot></div>'
+  })
+  export const TextArea = Vue.component('my-textarea', {
+    template: ' <div class="sem-input"><slot></slot></div>'
+  })
   export default Input
 </script>

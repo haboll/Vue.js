@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router/index'
-import i18n from '../static/i18n'
+import i18n from 'assets/i18n/i18n'
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({

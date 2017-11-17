@@ -1,0 +1,41 @@
+ @import '../../styles/variables';
+ $date-picker-width: 10rem;
+.date-content{
+  position: relative;
+  width: $date-picker-width;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  padding: .25rem;
+  &.isMini{
+    width: 7rem;
+    height: 1.5rem;
+    .date-img{
+      flex: 0 0 .75rem;
+      width: .75rem;
+      height: .75rem;
+    }
+  }
+  .date-text{
+    flex: 1;
+    width: inherit;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .date-img{
+    flex: 0 0 1rem;
+    width: 1rem;
+    height: 1rem;
+  }
+  .datepicker-drop{
+    position: absolute;
+    z-index: 10;
+    width: $date-picker-width;
+    top: 100%;
+    left: -1px;
+
+  }
+}

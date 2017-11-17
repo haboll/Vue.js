@@ -14,7 +14,7 @@ select组件
     >
       <div v-if="!setting.editable" class="select-content"> {{showText}} </div>
       <div v-else>
-        <my-input :value="iValue"/>
+        <my-input :value="iValue"></my-input>
       </div>
       <div class="select-img">
         <img src="./drop_icon.png"/>
@@ -39,7 +39,7 @@ select组件
   import MyInput from '../input/index'
   const Select = Vue.component('my-select', {
     props: ['setting'],
-    components: [MyInput],
+    components: {MyInput},
     methods: {
       onclick: function () {
         this.$emit('onOpen', {open: !this.setting.open})

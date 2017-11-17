@@ -10,6 +10,13 @@
   background-color: rgba(0,0,0,.3);
   transition: opacity .3s ease;
   opacity: 1;
+  &.show{
+    opacity: 1;
+    .sem-modal-body {
+      transform: translateX(-50%) translateY(-50%) scale(1);
+      opacity: 1;
+    }
+  }
   .sem-modal-body{
     margin: 0 auto;
     position: absolute;
@@ -38,7 +45,15 @@
         right: .5rem;
         height: 1.25rem;
         width: 1.25rem;
-
+        cursor: pointer;
+        -webkit-transition: transform .5s;
+        -moz-transition: transform .5s;
+        transition: transform .5s;
+        &:hover {
+          -webkit-transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
       }
     }
     .sem-modal-content{

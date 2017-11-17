@@ -6,21 +6,21 @@ $select-height: 1.5rem;
 .sem-select{
   width: $select-width;
   height: $select-height;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  background-color: #FFF;
-  color: #000;
+  position: relative;
+  background-color: transparent;
+  border: 1px solid #52CAFF;
+  box-sizing: border-box;
+  border-radius: .25rem;
+  color: #FFF;
   font-weight: normal;
   font-size: $font-size-12;
   display: flex;
   .select-content{
     width: 80%;
     height: $select-height;
-    line-height: $select-height - 2*$border-radius;
-    padding: $border-radius;
+    line-height: $select-height;
     box-sizing: border-box;
-    text-align: left;
-    border-right: 1px solid $border-color;
+    text-align: center;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -42,7 +42,7 @@ $select-height: 1.5rem;
     }
   }
   .select-drop-down{
-    background-color: #FFF;
+    background-color: #1e1e1e;
     position: absolute;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -58,7 +58,7 @@ $select-height: 1.5rem;
       $size: 4px;
       position: absolute;
       top: -($size + 1px);
-      border-bottom: solid $size $color-primary;
+      border-bottom: solid $size #52CAFF;
       border-left: solid $size transparent;
       border-right: solid $size transparent;
       &:before {
@@ -66,7 +66,7 @@ $select-height: 1.5rem;
         left: -$size;
         position: absolute;
         top: 1px;
-        border-bottom: solid $size #fff;
+        border-bottom: solid $size #52CAFF;
         border-left: solid $size transparent;
         border-right: solid $size transparent;
       }
@@ -86,7 +86,7 @@ $select-height: 1.5rem;
           color: #fff;
         }
         &:hover {
-          background-color: #f1f1f1;
+          background-color: #0f0f0f;
         }
         &.active {
           background-color: $color-primary;
@@ -101,8 +101,8 @@ $select-height: 1.5rem;
   &.open {
     .select-img {
       -webkit-transform: rotate(180deg);
-      -ms-transform: translateY(180deg);
-      transform: translateY(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
     }
 
   }
